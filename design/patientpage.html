@@ -1,0 +1,827 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PatientPage</title>
+<link href="navigation.css" rel="stylesheet" type="text/css" />
+<link href="style-patient.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//initial setting for slides
+	//$("div#billing").hide();
+	//$("div#demographics").hide();
+	$("div#insurance").hide();
+	$("div#vitals").hide();
+	$("div#disclosure").hide();
+	$("div#notes").hide();
+	$("div#appointment").hide();
+	$("div#medical").hide();
+	$("div#allergies").hide();
+	$("div#medications").hide();
+	$("div#surgeries").hide();
+	$("div#immunization").hide();
+	$("div#prescriptions").hide();
+	
+	// Button Setting for all slides
+	$("img#billing_down").click(function(){$("div#billing").slideDown('slow');});
+	$("img#billing_up").click(function(){$("div#billing").slideUp('slow');});
+	$("img#demographics_down").click(function(){$("div#demographics").slideDown('slow');});
+	$("img#demographics_up").click(function(){$("div#demographics").slideUp('slow');});
+	$("img#insurance_down").click(function(){$("div#insurance").slideDown('slow');});
+	$("img#insurance_up").click(function(){$("div#insurance").slideUp('slow');});
+	$("img#notes_down").click(function(){$("div#notes").slideDown('slow');});
+	$("img#notes_up").click(function(){$("div#notes").slideUp('slow');});	
+	$("img#disclosure_down").click(function(){$("div#disclosure").slideDown('slow');});
+	$("img#disclosure_up").click(function(){$("div#disclosure").slideUp('slow');});
+	$("img#vitals_down").click(function(){$("div#vitals").slideDown('slow');});
+	$("img#vitals_up").click(function(){$("div#vitals").slideUp('slow');});
+	
+	$("img#appt_down").click(function(){$("div#appointment").slideDown('slow');});
+	$("img#appt_up").click(function(){$("div#appointment").slideUp('slow');});
+	$("img#med_down").click(function(){$("div#medical").slideDown('slow');});
+	$("img#med_up").click(function(){$("div#medical").slideUp('slow');});
+	$("img#allg_down").click(function(){$("div#allergies").slideDown('slow');});
+	$("img#allg_up").click(function(){$("div#allergies").slideUp('slow');});
+	$("img#medi_down").click(function(){$("div#medications").slideDown('slow');});
+	$("img#medi_up").click(function(){$("div#medications").slideUp('slow');});
+	$("img#ser_down").click(function(){$("div#surgeries").slideDown('slow');});
+	$("img#ser_up").click(function(){$("div#surgeries").slideUp('slow');});
+	$("img#imu_down").click(function(){$("div#immunization").slideDown('slow');});
+	$("img#imu_up").click(function(){$("div#immunization").slideUp('slow');});
+	$("img#pres_down").click(function(){$("div#prescriptions").slideDown('slow');});
+	$("img#pres_up").click(function(){$("div#prescriptions").slideUp('slow');});
+	
+	
+	//Demographics Tabs settings 
+		$("a.tab").click(function () {
+			
+			
+			// switch all tabs off
+			$(".active").removeClass("active");
+			
+			// switch this tab on
+			$(this).addClass("active");
+			
+			// slide all content up
+			$(".content").slideUp();
+			
+			// slide this content up
+			var content_show = $(this).attr("title");
+			$("#"+content_show).slideDown();
+			return false;
+		  
+		});
+	// Insurance Tabs settings
+	$("a.tab1").click(function () {
+			
+			
+			// switch all tabs off
+			$(".active1").removeClass("active1");
+			
+			// switch this tab on
+			$(this).addClass("active1");
+			
+			// slide all content up
+			$(".content_insurance").slideUp();
+			
+			// slide this content up
+			var content_show = $(this).attr("title");
+			$("#"+content_show).slideDown();
+			return false;
+		  
+		});
+	
+});
+</script>
+</head>
+<body>
+<div class="main" id="main">
+	<div class="cname">John,<span> Taylor</span>  </div>
+	<div class="cpanel">
+    	
+        <div class="block_left"><p>46<span> years</span></p></div>
+        <div class="block"><div class="gender"><img src="images/male_gender.png" /></div></div>
+        <div class="block"><p>5' 11''</p></div>
+        <div class="block"><p>185<span> lbs</span></p></div>
+        <div class="block"><p><span>BMI</span> 25.1</p></div>
+    </div>
+    <div class="clr"></div>
+	<div class="main_left">    
+        <!-- Main Content Body start from here-->
+        
+        <!--Billing Section-->
+        
+        <div id="div_header">
+        	<div class="div_header_left_icon"><img src="images/tabs/History.png" /></div>
+        	<div class="div_header_left"><img src="images/headings/billing.png" width="63" height="16" alt="heading" /><!--<h3>BILLING</h3>-->
+       	 </div>
+            <!--<div class="div_header_right"><img src="images/down.png" alt="down" id="billing_down"  /><img src="images/up.png" alt="up" id="billing_up" /></div>-->
+        </div>
+        <div class="clr"></div>
+        <div class="global_div" id="billing">
+        	<div class="main_content">
+            	<div class="left"><span>Balance Due:</span></div>
+                <div class="right"><span>$ 599.00</span></div>
+                <div class="left">Primary Insurance:</div>
+                <div class="right">Hotna</div>
+                <div class="left">Effective Date: </div>
+                <div class="right">2010-04-02</div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        
+        
+        <!--Demographics  Section-->
+        
+        <div id="div_header">
+        	<div class="div_header_left_icon"><img src="images/tabs/PatientFile.png" /></div>
+        	<div class="div_header_left"><img src="images/headings/demographics-text.png" width="142" height="16" alt="heading" /><!--<h3>DEMOGRAPHICS</h3>--></div>
+           <!-- <div class="div_header_right"><img src="images/down.png" alt="down" id="demographics_down" /><img src="images/up.png" alt="up" id="demographics_up" /></div>-->
+        </div>
+        <div class="clr"></div>
+        <div class="global_div" id="demographics">
+        	<div class="main_content">
+            		<div id="tabbed_box_1" class="tabbed_box">
+                        <div class="tabbed_area">
+                            <ul class="tabs">
+                                <li><a href="#" title="who" class="tab active" >Who</a></li>
+                                <li><a href="#" title="contact" class="tab" >Contact</a></li>
+                                <li><a href="#" title="choices" class="tab" >Choices</a></li>
+                                <li><a href="#" title="employer" class="tab">Employer</a></li>
+                                <li><a href="#" title="stats" class="tab">Stats</a></li>
+                            </ul>
+                            
+                            <div id="who" class="content">
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="col1a"><b>Name:</b></div>
+                                        <div class="col3a">Mr. Steven  Milnore</div>
+                                    </div>
+                                	<div class="row">
+                                		<div class="col1a"><b>External ID:</b></div>
+                                        <div class="col3a">1</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1a"><b>DOB:</b></div>
+                                        <div class="col3a">1962-04-02</div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                    	<div class="col1a"><b>Sex:</b></div>
+                                        <div class="col3a">Male</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1a"><b>SS:</b></div>
+                                        <div class="col3a">333-222-3333</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>License/ID:</b></div>
+                                        <div class="col3a"></div>
+                                    </div>
+                                  <div class="row">
+                           		    <div class="col1a"><b>Marital Status:</b></div>
+                                        <div class="col3a">Married</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>User Defined:</b></div>
+                                        <div class="col3a"></div>
+                                  </div>
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                            <div id="contact" class="content" >
+                                <div class="grid">
+                                	<div class="row">
+                                		<div class="col1a"><b>Address:</b></div>
+                                        <div class="col3a">12332 Fake Road</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>City:</b></div>
+                                        <div class="col3a">Tallahassee</div>
+                                    </div>
+									
+                                    <div class="row">
+                                		<div class="col1a"><b>State:</b></div>
+                                        <div class="col3a">California</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Postal Code:</b></div>
+                                        <div class="col3a">98545</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1a"><b>Country:</b></div>
+                                        <div class="col3a">USA</div>
+                                     <!--   <div class="col1a"><b>Emergency Contact:</b></div>
+                                        <div class="col3a">Samuel</div> -->
+                                    </div>
+									<div class="row">
+                                    <div class="col1a"><b>Emergency Contact:</b></div>
+                                        <div class="col2a">Samuel</div>
+                                    </div>
+                                  <div class="row">
+                           		    <div class="col1a"><b>Mother`s Name:</b></div>
+                                        <div class="col3a">Chu</div>
+									</div>
+									<div class = "row">
+                                        <div class="col1a"><b>Emergency Phone:</b>	</div>
+                                        <div class="col2a">444-333-5555</div></div>
+
+                                  <div class="row">
+                           		    	<div class="col1a"><b>Guardian`s Name:</b></div>
+                                        <div class="col3a"></div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Home Phone:	</b></div>
+                                        <div class="col3a">444-333-2222</div>
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1a"><b>Work Phone:</b></div>
+                                        <div class="col3a"></div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Mobile Phone:</b>	</div>
+                                        <div class="col3a">444-333-4444</div>
+                                  </div>
+                                   <div class="row">
+                           		    	<div class="col1a"><b>Contact Email:</b></div>
+                                        <div class="col3a">Chu@notreal.com</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1a"></div>
+                                        <div class="col3a"></div>
+                                  </div>
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                            <div id="choices" class="content" >
+                                <div class="grid">
+                                	<div class="row">
+                                		<div class="col1b"><b>Provider:</b></div>
+                                        <div class="col3b">Terry Karmikle</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Pharmacy:</b></div>
+                                        <div class="col3b"></div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1b"><b>HIPAA Notice Received:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Allow Voice Message:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1b"><b>Allow Mail Message:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Allow SMS:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                  <div class="row">
+                           		    <div class="col1b"><b>Allow Email:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Leave Message With:</b>	</div>
+                                        <div class="col3b"></div>
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1b"><b>Allow Immunization Registry Use:</b></div>
+                                        <div class="col3b">YES</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Allow Immunization Info Sharing:</b>	</div>
+                                        <div class="col3b">YES</div>
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1b"><b>Allow Health Information Exchange:</b></div>
+                                        <div class="col3b">YES</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1b"></div>
+                                        <div class="col3b"></div>
+                                  </div>
+                                  <div class="clr"></div>
+                                </div>
+                            </div>
+                             <div id="employer" class="content" >
+                               <div class="grid">
+                                	<div class="row">
+                                		<div class="col1a"><b>Occupation:</b></div>
+                                        <div class="col3a">Sand Eater</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Employer Name:</b></div>
+                                        <div class="col3a">Sand R Us</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1a"><b>Employer Address:</b></div>
+                                        <div class="col3a">3454 Happy Street</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>City:</b></div>
+                                        <div class="col3a">Tallahasee</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1a"><b>State:</b></div>
+                                        <div class="col3a">California</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Postal Code:</b></div>
+                                        <div class="col3a">554455</div>
+                                    </div>
+                                  <div class="row">
+                           		    <div class="col1a"><b>Country:</b></div>
+                                        <div class="col3a">USA</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1a"></div>
+                                        <div class="col3a"></div>
+                                  </div>
+                                  <div class="clr"></div>
+                                </div>
+                            </div>
+                             <div id="stats" class="content" >
+                                <div class="grid">
+                                	<div class="row">
+                                		<div class="col1b"><b>Language:</b></div>
+                                        <div class="col3b">English</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Ethnicity:</b></div>
+                                        <div class="col3b">Not Hispanic or Latino</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1b"><b>Race:</b></div>
+                                        <div class="col3b">Asian</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Allow Voice Message:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1b"><b>Allow Mail Message:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Allow SMS:</b></div>
+                                        <div class="col3b">YES</div>
+                                    </div>
+                                  <div class="row">
+                           		    <div class="col1b"><b>Allow Email:</b></div>
+                                        <div class="col3b">YES</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Leave Message With:</b></div>
+                                        <div class="col3b"></div>
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1b"><b>Allow Immunization Registry Use:</b></div>
+                                        <div class="col3b">YES</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1b"><b>Allow Immunization Info Sharing:</b></div>
+                                        <div class="col3b">YES</div>
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1b"><b>Allow Health Information Exchange:</b></div>
+                                        <div class="col3b">YES</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1b"></div>
+                                        <div class="col3b"></div>
+                                  </div>
+                                  <div class="clr"></div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+            </div>
+        </div>
+       
+        
+         <!--Insurance Section-->
+        
+        <div id="div_header">
+        	<div class="div_header_left_icon"><img src="images/tabs/DefinedParameters.png" /></div>
+        	<div class="div_header_left">
+        	 <img src="images/headings/insurance-text.png" width="100" height="16" alt="heading" /> <!--<h3>INSURANCE</h3>-->
+        	</div>
+            <div class="div_header_right"><img src="images/down.png" alt="down" id="insurance_down"  /><img src="images/up.png" alt="up" id="insurance_up" /></div>
+        </div>
+        <div class="clr"></div>
+        <div class="global_div" id="insurance">
+        	<div class="main_content">
+            	<div id="tabbed_box_2" class="tabbed_box">
+                        <div class="tabbed_area_1">
+                            <ul class="tabs1">
+                                <li><a href="#" title="primary" class="tab1 active1" >Primary</a></li>
+                                <li><a href="#" title="eligibility" class="tab1" >Eligibility</a></li>
+                            </ul>
+                            
+                            <div id="primary" class="content_insurance">
+                                <div class="grid">
+                                	<div class="row">
+                                		<div class="col1" style="width:100%" >Primary Insurance	 from 2010-04-02	 until Present:</div>
+                                        <div class="col2" ></div>
+                                        <div class="col3"></div>
+                                       
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1">Hotna</div>
+                                        <div class="col2"><b>Subscriber:</b></div>
+                                        <div class="col3"><b>Subscriber Address:</b></div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1">555 Happy Blvd</div>
+                                        <div class="col2">Steven Milnore(self)</div>
+                                        <div class="col3">12332 Fake Road</div>
+                                        
+                                    </div>
+                                  <div class="row">
+                           		    	<div class="col1">Steward, CA 44433</div>
+                                        <div class="col2">S.S.: 333-222-3333</div>
+                                        <div class="col3">Tallahassee, CA, USA	98545</div>
+                                       
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1">Policy Number: 4433</div>
+                                        <div class="col2">D.O.B.: 1962-04-02</div>
+                                        <div class="col3"><b>Subscriber Employer:</b></div>
+                                       
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1">Plan Name: Guard</div>
+                                        <div class="col2">Phone: 444-333-2222</div>
+                                        <div class="col3">Sand R Us</div>
+                                        
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1">Group Number: 55</div>
+                                        <div class="col2">&nbsp;</div>
+                                        <div class="col3">3454 Happy Street</div>
+                                        
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1">&nbsp;</div>
+                                        <div class="col2">&nbsp;</div>
+                                        <div class="col3">Tallahasee, CA, USA	 554455</div>
+                                        
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1"><b>Accept Assignment:</b> YES</div>
+                                        <div class="col2">&nbsp;</div>
+                                        <div class="col3">&nbsp;</div>
+                                        
+                                  </div>
+
+                                    <div class="clr"></div>
+                                </div>
+                              </div>
+                                
+                                <div id="eligibility" class="content_insurance">
+                                <div class="grid">
+                                	<div class="row">
+                                		<div class="col1a" ><b>Insurance Provider:</b></div>
+                                        <div class="col3a" >N/A</div>
+                                    </div>
+                                   
+                                    <div class="row">
+                                		<div class="col1a"><b>Status:</b></div>
+                                        <div class="col3a">N/A</div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                		<div class="col1a"><b>Last Verified On:</b></div>
+                                        <div class="col3a">N/A</div>
+                                    </div>
+                                    
+                                  <div class="row">
+                           		    	<div class="col1a"><b>Copay:</b></div>
+                                        <div class="col3a">N/A</div>
+                                  </div>
+                                   
+                                  <div class="row">
+                           		    	<div class="col1a"><b>Deductible:</b></div>
+                                        <div class="col3a">N/A</div>
+                                  </div>
+                                   
+                                  <div class="row">
+                           		    	<div class="col1a"><b>Deductible Met:</b></div>
+                                        <div class="col3a">N/A</div>
+                                  </div>
+                                   
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+            </div>
+            
+        </div>
+       
+        
+          <!--Notes Section-->
+        
+        <div id="div_header">
+        	<div class="div_header_left_icon"><img src="images/tabs/Edit.png" /></div>
+        	<div class="div_header_left">
+        	  <img src="images/headings/notes-text.png" width="57" height="16" alt="heading" /><!--<h3>NOTES</h3>-->
+        	</div>
+            <div class="div_header_right"><img src="images/down.png" alt="down" id="notes_down"  /><img src="images/up.png" alt="up" id="notes_up" /></div>
+        </div>
+        <div class="clr"></div>
+        <div class="global_div" id="notes">
+        	<div class="main_content">
+            	<div class="notes_head"><p><b>Unassigned</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012-02-09 22:06 (admin to physican) Hi</p></div>
+                <div class="notes_body">
+                	<p>Displaying the following number of most recent notes: 3<br />
+<a href="#">Click here to view them all</a></p>
+                </div>
+            </div>
+            <div class="edit"><a href="#"><img src="images/edit.png" alt="img" width="126" height="35" border="0"/></a></div>
+        </div>
+        
+        
+      <!--   <!--Disclosures Section
+        
+        <div id="div_header">
+        	<div class="div_header_left_icon"><img src="images/tabs/LastThreeMonths.png" /></div>
+        	<div class="div_header_left"><h3>Disclosures</h3></div>
+            <div class="div_header_right"><img src="images/down.png" alt="down" id="disclosure_down" /><img src="images/up.png" alt="up" id="disclosure_up" /></div>
+        </div>
+        <div class="clr"></div>
+        <div class="global_div" id="disclosure">
+        	<div class="main_content">
+            	<div class="disclosure_body"><p>There are no disclosure for this patient. To record disclosures <a href="#">click here</a></p></div>
+            </div>
+            <div class="edit"><a href="#"><img src="images/edit.png"></a></div>
+        </div> -->
+       
+        
+         <!--Vitals Section-->
+         
+        <div id="div_header">
+        	<div class="div_header_left_icon"><img src="images/tabs/Thermometer.png" /></div>
+        	<div class="div_header_left">
+        	  <img src="images/headings/vital-text.png" width="59" height="16" alt="heading" /><!--<h3>VITALS</h3>-->
+        	</div>
+            <div class="div_header_right"><img src="images/down.png" alt="down" id="vitals_down"  /><img src="images/up.png" alt="up" id="vitals_up" /></div>
+        </div>
+        <div class="clr"></div>
+        <div class="global_div" id="vitals">
+        	<div class="main_content">
+        	  <div id="vital" class="content_vitals">
+                              <div class="grid">
+                                	<div class="row">
+                                		<div class="col1a" style="width:100%;" ><b>Most recent vitals from: 2011-04-02 02:26:29</b></div>
+                                	</div>
+                                    
+                                    <div class="row">
+                                		<div class="col1a"><b>Blood Pressure:</b></div>
+                                        <div class="col3a">150/90</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Weight:</b></div>
+                                        <div class="col3a">185.00 lb (83.91 kg)</div>
+                                    </div>
+                                    <div class="row">
+                                		<div class="col1a"><b>Height:</b></div>
+                                        <div class="col3a">70.00 in (177.80 cm)</div>
+                                   </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Temperature:</b></div>
+                                        <div class="col3a">102.00 F (38.89 C)</div>
+                                    </div>
+                                  <div class="row">
+                           		    	<div class="col1a"><b>Temp Method:</b></div>
+                                        <div class="col3a">Oral</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Pulse:</b></div>
+                                        <div class="col3a">120 per min</div>
+                                  </div>
+                                  <div class="row">
+                           		    <div class="col1a"><b>Respiration:</b></div>
+                                        <div class="col3a">22 per min</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>BMI:</b></div>
+                                        <div class="col3a">27 kg/m^2</div>
+                                  </div>
+                                  <div class="row">
+                           		    	<div class="col1a"><b>BMI Status:</b></div>
+                                        <div class="col3a">Normal BL</div>
+                                  </div>
+                                    <div class="row">
+                                        <div class="col1a"><b>Oxygen Saturation:</b></div>
+                                        <div class="col3a">85%</div>
+                        </div>
+                                    <div class="clr"></div>
+                            </div>
+                     </div>
+            </div>
+            <div class="edit"><a href="#"><img src="images/trend.png" width="126" height="35" border="0"/></a></div>
+        </div>
+        
+	</div>
+<!-- Main right start here-->
+<div class="main_right"><div class="flash" id="flash">
+<script src="http://java.com/js/deployJava.js"></script>
+<script >
+ var attributes = {
+  codebase: '.',
+  code: 'com.jcomeau.imagetagging.TaggingApplet.class',
+  archive: 'TaggingApplet.jar',
+  width: '100%', 
+  height: '100%'
+ };
+ var parameters = {host: window.location.host};
+ var version = '1.5' ; // whichever minimum version you want to target
+ if (typeof(deployJava) != 'undefined') {
+  deployJava.runApplet(attributes, parameters, version);
+ } else {
+  var applet = document.createElement('object');
+  var hostparam = document.createElement('param');
+  hostparam.name = "host"; hostparam.value = window.location.host;
+  var archiveparam = document.createElement('code');
+  archiveparam.name = "archive"; archiveparam.value = "TaggingApplet.jar";
+  applet.appendChild(hostparam); applet.appendChild(archiveparam);
+  applet.classid = "java:com.jcomeau.imagetagging.TaggingApplet.class";
+  applet.code = "com.jcomeau.imagetagging.TaggingApplet";
+  applet.type = "application/x-java-applet";
+  applet.archive = "TaggingApplet.jar";
+  applet.height = "100%";
+  applet.width = "100%";
+  document.getElementById('flash').appendChild(applet);
+ }
+</script>
+</div>
+
+<!--Notes Section-->
+        
+    <div id="div_header" style="margin-top:25px;">
+        	<div class="div_header_left_icon"><img src="images/tabs/Edit.png" /></div>
+   	  <div class="div_header_left">
+        	  <img src="images/headings/generate.png" width="156" height="16" alt="heading" /><!--<h3>Generate Report</h3>-->
+   	  </div>
+    </div>
+        <div class="clr"></div>
+    <div class="global_div" style="width:517px;" >
+        	<div class="main_content" style="width:517px;">
+            	<div class="generateleft"><input name="selector" type="checkbox" id="selector" checked="checked" />
+           	    &nbsp;&nbsp;Demographics</div>
+                <div class="generateleft2"><input type="checkbox" name="selector" id="selector" />
+           	    &nbsp;&nbsp;Immunizations</div>
+                <div class="clr"></div>
+                <div class="generateleft"><input type="checkbox" name="selector" id="selector" />
+           	    &nbsp;&nbsp;History</div>
+                <div class="generateleft2"><input type="checkbox" name="selector" id="selector" />
+           	    &nbsp;&nbsp;Patient Notes</div>
+                <div class="clr"></div>
+                <div class="generateleft"><input type="checkbox" name="selector" id="selector" />
+           	    &nbsp;&nbsp;Insurance</div>
+              <div class="generateleft2"><input type="checkbox" name="selector" id="selector" />
+           	    &nbsp;&nbsp;Transactions</div>
+                <div class="clr"></div>
+                <div class="generateleft"><input type="checkbox" name="selector" id="selector" />
+           	    &nbsp;&nbsp;Billing</div>
+                <div class="generateleft2"><input type="checkbox" name="selector" id="selector" />
+           	    &nbsp;&nbsp;Communications</div>
+                <div class="clr"></div>
+</div>
+            <div class="edit"><a href="#"><img src="images/generate.png" alt="img" width="126" height="44" border="0"/></a></div>
+    </div>
+    <div align="center"><a href="patientpage-popup.html"><img src="images/btn-complain.png"  alt="complain" width="217" height="37" border="0" style="padding-top:20px" /></a></div>
+</div>
+<div class="clr"></div>
+<!-- Java Application -->
+        <div class="ja_main">
+        	<div class="ja">
+            
+            	 <div id="div_header_ja">
+                 	<div class="div_header_left_icon"><img src="images/tabs/Calendar.png" /></div>
+                    <div class="div_header_left"><img src="images/headings/appointments-text.png" width="132" height="16" alt="heading" /><!--<h3>APPOINTMENTS</h3>--></div>
+                    <div class="div_header_right"><img src="images/down.png" alt="down" id="appt_down"  /><img src="images/up.png" alt="up" id="appt_up" /></div>
+                </div>
+                <div class="clr"></div>
+                <div class="edit_ja" id="appointment">
+                	<div class="content_vitals">
+                		<div class="grid">	
+                        	<div class="row"><input type="text" name="appointment_text_1" value="" /></div>
+                    		<div class="row"><input type="text" name="appointment_text_2" value="" /> </div>
+                    		<div class="row"><input type="text" name="appointment_text_3" value="" /></div>
+                        </div> 
+                    </div> 
+                </div>
+          <!-- Medical problems Tab      
+                 <div id="div_header_ja">
+                 	<div class="div_header_left_icon"><img src="images/tabs/Stethoscope.png" /></div>
+                    <div class="div_header_left"><h3>Medical Problems</h3></div>
+                    <div class="div_header_right"><img src="images/down.png" alt="down" id="med_down"  /><img src="images/up.png" alt="up" id="med_up" /></div>
+                </div>
+                <div class="clr"></div>
+                <div class="edit_ja" id="medical">
+                	<div class="content_vitals">
+                		<div class="grid">	
+                        	<div class="row"><input type="text" name="medical_text_1" value="" /></div>
+                    		<div class="row"><input type="text" name="medical_text_2" value="" /> </div>
+                    		<div class="row"><input type="text" name="medical_text_3" value="" /></div>
+                        </div> 
+                    </div>
+                </div>
+                <div id="div_header_ja">
+                	<div class="div_header_left_icon"><img src="images/tabs/Syringe.png" /></div>
+                    <div class="div_header_left"><h3>Allergies</h3></div>
+                    <div class="div_header_right"><img src="images/down.png" alt="down" id="allg_down"  /><img src="images/up.png" alt="up" id="allg_up" /></div>
+                </div>
+                <div class="clr"></div>
+                <div class="edit_ja" id="allergies">
+                    <div class="content_vitals">
+                		<div class="grid">	
+                        	<div class="row"><input type="text" name="allergies_text_1" value="" /></div>
+                    		<div class="row"><input type="text" name="allergies_text_2" value="" /> </div>
+                    		<div class="row"><input type="text" name="allergies_text_3" value="" /></div>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div id="div_header_ja">
+                	<div class="div_header_left_icon"><img src="images/tabs/Pills.png" /></div>
+                    <div class="div_header_left"><h3>Medications</h3></div>
+                    <div class="div_header_right"><img src="images/down.png" alt="down" id="medi_down"  /><img src="images/up.png" alt="up" id="medi_up" /></div>
+                </div>
+                <div class="clr"></div>
+                <div class="edit_ja" id="medications">
+                    <div class="content_vitals">
+                		<div class="grid">	
+                        	<div class="row"><input type="text" name="medications_text_1" value="" /></div>
+                    		<div class="row"><input type="text" name="medications_text_2" value="" /> </div>
+                    		<div class="row"><input type="text" name="medications_text_3" value="" /></div>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div id="div_header_ja">
+                	<div class="div_header_left_icon"><img src="images/tabs/KidneyDish.png" /></div>
+                    <div class="div_header_left"><h3>Surgeries</h3></div>
+                    <div class="div_header_right"><img src="images/down.png" alt="down" id="ser_down"  /><img src="images/up.png" alt="up" id="ser_up" /></div>
+                </div>
+                <div class="clr"></div>
+                <div class="edit_ja" id="surgeries">
+                     <div class="content_vitals">
+                		<div class="grid">	
+                        	<div class="row"><input type="text" name="sergeries_text_1" value="" /></div>
+                    		<div class="row"><input type="text" name="sergeries_text_2" value="" /> </div>
+                    		<div class="row"><input type="text" name="sergeries_text_3" value="" /></div>
+                        </div> 
+                    </div>                    
+                </div>
+                
+                <div id="div_header_ja">
+                	<div class="div_header_left_icon"><img src="images/tabs/FirstAidKit.png" /></div>
+                    <div class="div_header_left"><h3>Immunization</h3></div>
+                    <div class="div_header_right"><img src="images/down.png" alt="down" id="imu_down"  /><img src="images/up.png" alt="up" id="imu_up" /></div>
+                </div>
+                <div class="clr"></div>
+                <div class="edit_ja" id="immunization">
+                    <div class="content_vitals">
+                		<div class="grid">	
+                        	<div class="row"><input type="text" name="immuniztion_text_1" value="" /></div>
+                    		<div class="row"><input type="text" name="immuniztion_text_2" value="" /> </div>
+                    		<div class="row"><input type="text" name="immuniztion_text_3" value="" /></div>
+                        </div> 
+                    </div>            
+                </div>  -->
+                
+                <div id="div_header_ja">
+                	<div class="div_header_left_icon"><img src="images/tabs/Prescription.png" /></div>
+                    <div class="div_header_left"><img src="images/headings/precrip-text.png" width="126" height="16" alt="heading" /><!--<h3>PRESCRITIONS</h3>--></div>
+                    <div class="div_header_right"><img src="images/down.png" alt="down" id="pres_down"  /><img src="images/up.png" alt="up" id="pres_up" /></div>
+                </div>
+                <div class="clr"></div>
+                <div class="edit_ja" id="prescriptions">
+                     <div class="content_vitals">
+                		<div class="grid">	
+                        	<div class="row"><input type="text" name="prescriptions_text_1" value="" /></div>
+                    		<div class="row"><input type="text" name="prescriptions_text_2" value="" /> </div>
+                    		<div class="row"><input type="text" name="prescriptions_text_3" value="" /></div>
+                        </div> 
+                    </div>            
+                </div>
+
+
+                
+            </div>
+        </div>
+        <!-- End Here-->
+<div class="clr"></div>
+<div class="footer"></div>
+</div>
+</body>
+</html>
